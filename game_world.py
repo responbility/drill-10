@@ -1,27 +1,27 @@
-world = []
+world = [[], [], []]  # layers: 0 - background, 1 - midground, 2 - foreground
 
 
-define add_object(o):
-      world.objects.append(o)
+def add_object(o, depth=0):
+    world[depth].append(o)
 
-      def add_object(o):
-          world.append(o)
 
-        def update_world():
-            for layer in world:
-            for o in world:
+def remove_object(o):
+    for layer in world:
+        if o in layer:
+            layer.remove(o)
+            return
+
+
+def clear():
+    for layer in world:
+        layer.clear()
+
+
+# Optional helpers used by main.py
+def update():
+    for layer in world:
+        for o in layer:
                 o.update()
 
 
-     def render():
-         for layer in world:
-         for o in world:
-             o.draw()
-
-     def remove_object(o):
-         for layer in world:
-             if o in layer:
-                    world.remove(o)
-                    layer.remove(o)
-                    return
 
