@@ -5,7 +5,7 @@ define add_object(o):
       world.objects.append(o)
 
       def add_object(o):
-          world_append(o)
+          world.append(o)
 
         def update_world():
             for layer in world:

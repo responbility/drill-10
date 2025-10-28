@@ -111,7 +111,7 @@ class Run:
 
 
 
-class Boy:
+class boy:
     def __init__(self):
         self.x, self.y = 400, 90
         self.frame = 0
@@ -126,8 +126,8 @@ class Boy:
             self.IDLE,
             {
                 self.SLEEP : {space_down: self.IDLE},
-                self.IDLE : {space_down:self.IDLE time_out: self.SLEEP, right_down: self.RUN, left_down: self.RUN, right_up: self.RUN, left_up: self.RUN},
-                self.RUN : {space_down:self.RUN right_up: self.IDLE, left_up: self.IDLE, right_down: self.IDLE, left_down: self.IDLE}
+                self.IDLE : {space_down:self.IDL,Etime_out: self.SLEEP, right_down: self.RUN, left_down: self.RUN, right_up: self.RUN, left_up: self.RUN},
+                self.RUN : {space_down:self.RUN,right_up: self.IDLE, left_up: self.IDLE, right_down: self.IDLE, left_down: self.IDLE}
             } #pace_down: self.IDLE 부분 수정
         )
 
