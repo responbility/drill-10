@@ -127,20 +127,9 @@ class Boy:
             self.IDLE,
             {
                 self.SLEEP: {space_down: self.IDLE},
-                self.IDLE: {
-                    space_down: self.IDLE,
-                    time_out: self.SLEEP,
-                    right_down: self.RUN,
-                    left_down: self.RUN,
-                    right_up: self.RUN,
-                    left_up: self.RUN
+                self.IDLE: {space_down: self.IDLE,time_out: self.SLEEP,right_down: self.RUN,left_down: self.RUN,right_up: self.RUN,left_up: self.RUN
                 },
-                self.RUN: {
-                    space_down: self.RUN,
-                    right_up: self.IDLE,
-                    left_up: self.IDLE,
-                    right_down: self.IDLE,
-                    left_down: self.IDLE
+                self.RUN: {space_down: self.RUN,right_up: self.IDLE,left_up: self.IDLE,right_down: self.IDLE,left_down: self.IDLE
                 }
             }
         )
@@ -164,6 +153,5 @@ class Boy:
 
     def fire_ball(self):
         print("fire_ball")
-        #실제로 파이어볼 객체를 생성하고 발사하는 코드는 여기에 작성.
         ball = Ball(self.x, self.y, self.face_dir)
         game_world.add_object(ball)
